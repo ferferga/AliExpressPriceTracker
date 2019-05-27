@@ -63,7 +63,7 @@ with open("track_data/index.html", mode="w", encoding="utf-8") as f:
     placeholder = "<table>" + placeholder[0] + "</table>"
     query = cursor.execute("SELECT * FROM products")
     for row in query:
-        output = output + "\n\t\t\t<tr>\n\t\t\t\t<td>" + row[1] + "</td>\n\t\t\t\t<td>" + row[4] + "</td>\n\t\t\t\t<td>" + row[3] + "</td>\n\t\t\t</tr>"
+        output = output + "\n\t\t\t<tr>\n\t\t\t\t<td>" + row[1] + "</td>\n\t\t\t\t<td>" + str(row[4]) + "</td>\n\t\t\t\t<td>" + str(row[3]) + "</td>\n\t\t\t</tr>"
     output = output + "\n\t\t</table>"
     content = content.replace(placeholder, output)
     f.write(content)
